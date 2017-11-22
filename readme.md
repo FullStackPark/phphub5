@@ -1,4 +1,4 @@
-<p align="center">
+<!--p align="center">
   <br>
   <b>创造不息，交付不止</b>
   <br>
@@ -10,13 +10,13 @@
   <a href="https://laravel-china.org/topics/3383/laravel-the-first-chinese-new-book-laravel-tutorial">
     <img src="http://ww1.sinaimg.cn/large/6d86d850gw1fao8va0fv0j208y0aw74v.jpg" width=200>
   </a>
-</p>
+</p-->
 
 ---
 
 ![macbook](https://cloud.githubusercontent.com/assets/324764/18414545/d875e012-77ff-11e6-9249-0b56a6460cb8.png)
 
-## 项目概述
+## 1. 项目概述
 
 * 产品名称：PHPHub5
 * 项目代码：PHPHub5
@@ -24,29 +24,29 @@
 
 [PHPHub](https://github.com/summerblue/phphub) Laravel 5.1 版本。
 
-## 运行环境
+## 2. 运行环境
 
 - Nginx 1.8+
 - PHP 5.6+
-- Mysql 5.7+
+- MySQL 5.7+
 - Redis 3.0+
 - Memcached 1.4+
 
-## 开发环境部署/安装
+## 3. 开发环境部署/安装
 
 本项目代码使用 PHP 框架 [Laravel 5.1](https://doc.laravel-china.org/docs/5.1/) 开发，本地开发环境使用 [Laravel Homestead](https://doc.laravel-china.org/docs/5.1/homestead)。
 
 下文将在假定读者已经安装好了 Homestead 的情况下进行说明。如果您还未安装 Homestead，可以参照 [Homestead 安装与设置](https://doc.laravel-china.org/docs/5.1/homestead#installation-and-setup) 进行安装配置。
 
-### 基础安装
+### 3.1 基础安装
 
-#### 1. 克隆源代码
+#### 3.1.1 克隆源代码
 
 克隆源代码到本地：
 
-    > git clone https://github.com/summerblue/phphub5.git
+    > git clone https://github.com/FullStackPark/phphub5.git
 
-#### 2. 配置本地的 Homestead 环境
+#### 3.1.2 配置本地的 Homestead 环境
 
 1). 运行以下命令编辑 Homestead.yaml 文件：
 
@@ -78,15 +78,15 @@ homestead provision
 
 > 注意：有时候你需要重启才能看到应用。运行 `homestead halt` 然后是 `homestead up` 进行重启。
 
-#### 3. 安装扩展包依赖
+#### 3.1.3 安装扩展包依赖
 
     > composer install
 
-#### 4. 生成配置文件
+#### 3.1.4 生成配置文件
 
     > cp .env.example .env
 
-#### 5. 使用安装命令
+#### 3.1.5 使用安装命令
 
 虚拟机里面：
 
@@ -96,13 +96,13 @@ php artisan est:install
 
 > 更多信息，请查阅 ESTInstallCommand
 
-#### 6. 配置 hosts 文件
+#### 3.1.6 配置 hosts 文件
 
 主机里:
 
     echo "192.168.10.10   phphub5.app" | sudo tee -a /etc/hosts
 
-### 前端工具集安装
+### 3.2 前端工具集安装
 
 > 代码里自带编译后的前端代码，如果你不想开发前端样式的话，你是不需要配置前端工具集的，可直接跳过直达 `链接入口` 部分。
 
@@ -134,7 +134,7 @@ gulp
 gulp watch
 ```
 
-### 链接入口
+### 3.3 链接入口
 
 > 请修改 `.env` 文件为 `APP_ENV=local` 和 `APP_DEBUG=true` 。
 
@@ -145,7 +145,7 @@ gulp watch
 
 至此, 安装完成。
 
-## 扩展包描述
+## 4 扩展包描述
 
 | 扩展包 | 一句话描述 | 在本项目中的使用案例 |  
 | --- | --- | --- |   
@@ -168,14 +168,14 @@ gulp watch
 |[laracasts/flash](https://packagist.org/packages/laracasts/flash)| 简单的 flash messages | 用户登录成功、发帖成功后的提示使用此扩展包开发 |
 
 
-## 自定义 Artisan 命令列表
+## 5. 自定义 Artisan 命令列表
 
 | 命令 | 说明 |
 | --- | --- |
 | est:install | 安装命令，仅支持开发环境下运行，在初次安装才有必要运行。|
 | est:reinstall | 重装命令，仅支持开发环境下运行，调用此命令会重置数据库、重置用户身份。|
 
-## 计划任务
+## 6. 计划任务
 
 此项目的计划任务都以 Laravel 的 [任务调度](https://doc.laravel-china.org/docs/5.1/scheduling) 方式执行。
 
@@ -185,7 +185,7 @@ gulp watch
 | `backup:clean` | 清理过期的数据库备份，每日 1:20 运行，属于 [spatie/laravel-backup](https://github.com/spatie/laravel-backup) 的逻辑 | php artisan backup:clean |
 
 
-## 代码生成器日志
+## 7. 代码生成器日志
 
 本项目使用 [infyomlabs/laravel-generator](https://packagist.org/packages/infyomlabs/laravel-generator) 快速构建项目， 记录这些日志目的为了方便后续开发可以借鉴。
 
@@ -216,7 +216,7 @@ php artisan make:scaffold Banners --schema="position:string:index,order:integer:
 php artisan make:scaffold NotificationMailLogs --schema="from_user_id:integer:unsigned:default(0):index,user_id:integer:unsigned:default(0):index,type:string:index,body:text:nullable"
 ```
 
-## License
+## 8. License
 
 > 使用 PHPHub5 构建，或者基于 PHPHub5 源代码修改的站点 **必须** 在页脚加上 `Powered by PHPHub` 字样，并且必须链接到 `https://laravel-china.org` 上。**必须** 在页面的每一个标题上加上 `Powered by PHPHub` 字样。
 
